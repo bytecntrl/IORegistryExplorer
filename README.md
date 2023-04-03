@@ -28,5 +28,4 @@ NOTE: all I/O Registry objects exist on all planes, but on any individual plane,
 I recommend to read ioreg to use [the program offered by utopia-team](https://github.com/utopia-team/IORegistryExplorer/releases/latest).
 
 ## Credits
-* **Apple** for macOS
-* **utopia-team** for IORegistryExplorer
+* **Apple** for macOS and IORegistryExplorer
