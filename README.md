@@ -27,5 +27,34 @@ NOTE: all I/O Registry objects exist on all planes, but on any individual plane,
 ## How to read I/O Registry?
 I recommend to read ioreg to use [the program offered by utopia-team](https://github.com/utopia-team/IORegistryExplorer/releases/latest).
 
+## What is it for us?
+We use IOReg to see the compatibility of our computer with MacOS.
+
+For MacOS to work it needs some devices that normal computers often don't have (for example EC).
+We also add patches to make our system more compatible.
+
+## What can we see?
+### CPU Power Management
+To see if the Power Management (SSDT-PLUG) works you have to go to the first core of your processor (the name can be found in the DSDT) and check if something like this is found under ```AppleACPICPU```:
+
+![](assets/img/IOReg-CPU.png)
+
+NOTE: if you search for AppleACPICPU in ioreg it will not show you any results under AppleACPICPU as you have to remove the search.
+
+More information:
+* [Dortania ACPI](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html)
+* [Dortania Post-Install](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html)
+* [OC Little Translated](https://github.com/5T33Z0/OC-Little-Translated/tree/main/01_Adding_missing_Devices_and_enabling_Features/CPU_Power_Management)
+
+### NVMeFix
+If you have an NVMe you can check the correct functioning of NVMeFix through the ```apst``` parameter.
+
+NOTE: ```apst``` is inside ```IONVMeController```.
+
+![](assets/img/IOReg-NVMe.png)
+
+More information:
+* [NVMeFix README](https://github.com/acidanthera/NVMeFix)
+
 ## Credits
 * **Apple** for macOS and IORegistryExplorer
